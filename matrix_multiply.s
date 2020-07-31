@@ -90,8 +90,8 @@ start_loop2: # jのloop
 		nop
 
 		addi $t5 $t5 1 # k += 1
-		addi $t1 $t1 4 # array1の次の行に移動
-		addi $t2 $t2 16 # array1の次の列に移動
+		addi $t1 $t1 4 # array1の1個右の要素に移動
+		addi $t2 $t2 16 # array2の1個下の要素に移動
 
 		swc1 $f3 0($t3) # array3の要素に計算結果をロード
 
@@ -99,9 +99,9 @@ start_loop2: # jのloop
 
 	end_loop3:	
 
-	addi $t4 $t4 1 # j++
-	addi $t2 $t2 -44 # array2の次の行の1番上に移動
-	addi $t3 $t3 4 # array3の次の位置に移動
+	addi $t4 $t4 1 # j += 1
+	addi $t2 $t2 -44 # array2の1個右の行の1番上に移動
+	addi $t3 $t3 4 # array3の1つ右の要素に移動
 
 	j start_loop2
 
